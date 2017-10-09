@@ -1,5 +1,7 @@
 package me.oskarmendel.exception;
 
+import me.oskarmendel.player.Player;
+
 /**
  * Exception class for player state.
  * 
@@ -8,18 +10,18 @@ package me.oskarmendel.exception;
  * @version 0.00.00
  */
 public class PlayerStateException extends Exception{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * Initiates the exception.
 	 * 
-	 * @param message
 	 */
-	public PlayerStateException(String message){
-		super(message);
+	private static final long serialVersionUID = -5656848693309679151L;
+
+	/**
+	 * Constructs the exception.
+	 */
+	public PlayerStateException(Player player){
+		super("Time: " + player.getCurrentTime() +
+				" Volume: " + player.getVolume() +
+				" Player: " + player.toString());
 	}
 }
